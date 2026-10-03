@@ -45,15 +45,15 @@ This project explores the survey data with **PostgreSQL** to ask:
 4. Calculated the number of students and the average depression, social connectedness and acculturative stress scores for each length of stay.
 
 ```sql
-SELECT stay,
-       COUNT(inter_dom)   AS count_int,
-       ROUND(AVG(todep), 2) AS average_phq,
-       ROUND(AVG(tosc), 2)  AS average_scs,
-       ROUND(AVG(toas), 2)  AS average_as
-FROM students
-WHERE inter_dom = 'Inter'
-GROUP BY stay
-ORDER BY stay DESC;
+SELECT stay,                                -- length of stay in years
+       COUNT(inter_dom)     AS count_int,   -- number of international students for each length of stay
+       ROUND(AVG(todep), 2) AS average_phq, -- average depression score (PHQ-9), rounded to 2 decimals
+       ROUND(AVG(tosc), 2)  AS average_scs, -- average social connectedness score (SCS)
+       ROUND(AVG(toas), 2)  AS average_as   -- average acculturative stress score (ASISS)
+FROM students                               -- the table holding the survey data
+WHERE inter_dom = 'Inter'                   -- keep international students only
+GROUP BY stay                               -- one row per length of stay (needed because of the AVG/COUNT functions)
+ORDER BY stay DESC;                         -- sort from the longest stay to the shortest
 ```
 
 The full query is in [`sql/analysis.sql`](sql/analysis.sql).
