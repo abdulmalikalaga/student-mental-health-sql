@@ -2,7 +2,7 @@
 
 An SQL analysis of how international students' mental health, social connectedness and acculturative stress change with their length of stay at a Japanese university.
 
-![Illustration of silhouetted heads](images/mentalhealth.jpg)
+<img width="945" height="522" alt="mentalhealth" src="https://github.com/user-attachments/assets/2a6fc91f-4b54-448e-81ea-2772420e8fa4" />
 
 ---
 
@@ -115,4 +115,4 @@ student-mental-health-sql/
 ## 👤 Author
 
 **Deji**
-GitHub: [@your-username](https://github.com/your-username)
+GitHub: [@abdulmalikalaga](https://github.com/abdulmalikalaga)
